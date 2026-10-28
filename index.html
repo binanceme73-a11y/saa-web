@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAA Travel & Manpower Agency</title>
     <style>
-        /* Ren og skreddersydd CSS */
+        /* ማራኪ እና የራሱ የሆነ CSS */
         :root {
-            --primary: #5e111d; /* Din SAA Maroon-farge */
-            --secondary: #ce9f43; /* Din SAA Gull-farge */
+            --primary: #5e111d; /* የሎጎህ ማሩን ቀለም */
+            --secondary: #ce9f43; /* የሎጎህ ወርቃማ ቀለም */
             --bg-color: #f4f6f9;
             --text-color: #333;
         }
@@ -25,7 +25,7 @@
             color: var(--text-color);
         }
 
-        /* Navigasjon og Logo */
+        /* ሄደር እና ሎጎ */
         header {
             background-color: #ffffff;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
@@ -44,7 +44,7 @@
             gap: 15px;
         }
 
-        /* Henter logo.jpg fra mappen din */
+        /* ሎጎውን ከፎልደርህ ያመጣዋል */
         .logo-container img {
             height: 70px;
             border-radius: 8px;
@@ -78,7 +78,7 @@
             color: var(--secondary);
         }
 
-        /* Hovedseksjon (Hero) */
+        /* ዋናው ገጽ (Hero) */
         .hero {
             background: linear-gradient(rgba(94, 17, 29, 0.85), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074&auto=format&fit=crop') no-repeat center center/cover;
             height: 65vh;
@@ -116,7 +116,7 @@
             max-width: 600px;
         }
 
-        /* Søkeboks */
+        /* የመፈለጊያ ፎርም */
         .search-box {
             background: #ffffff;
             border-radius: 20px;
@@ -182,7 +182,7 @@
             box-shadow: 0 5px 15px rgba(94, 17, 29, 0.4);
         }
 
-        /* Tjenester */
+        /* አገልግሎቶች */
         .services {
             text-align: center;
             padding: 60px 20px;
@@ -228,7 +228,7 @@
             line-height: 1.6;
         }
 
-        /* Footer */
+        /* ፉተር (Footer) */
         footer {
             background-color: var(--primary);
             color: #fff;
@@ -254,7 +254,7 @@
 
     <header>
         <div class="logo-container">
-            <!-- Sørg for at filen din heter nøyaktig logo.jpg i samme mappe -->
+            <!-- ፎቶው ከሌለ ወርቃማ እና ማሩን ጽሁፍ ያመጣል -->
             <img src="logo.jpg" alt="SAA Logo" onerror="this.onerror=null; this.src='https://via.placeholder.com/70x70/5e111d/ce9f43?text=SAA';">
             <div class="brand-text">
                 <h1>SAA</h1>
@@ -262,58 +262,58 @@
             </div>
         </div>
         <div class="nav-links">
-            <a href="#">Hjem</a>
-            <a href="#">Tjenester</a>
-            <a href="#">Kontakt oss</a>
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">Contact Us</a>
         </div>
     </header>
 
     <section class="hero">
-        <div class="founder-badge">Grunnlagt av Abdurahman Ashebir Yimam</div>
-        <h2>Reis med Trygghet</h2>
-        <p>Etiopias mest pålitelige byrå for flyreiser og internasjonal bemanning.</p>
+        <div class="founder-badge">Founded by Abdurahman Ashebir Yimam</div>
+        <h2>Travel with Confidence</h2>
+        <p>Ethiopia's most trusted agency for flight bookings and foreign employment.</p>
     </section>
 
     <div class="search-box">
         <div class="input-group">
-            <label>REIS FRA</label>
+            <label>FLY FROM</label>
             <input type="text" placeholder="Addis Ababa (ADD)">
         </div>
         <div class="input-group">
-            <label>REIS TIL</label>
-            <input type="text" placeholder="Destinasjon (f.eks. Dubai)">
+            <label>FLY TO</label>
+            <input type="text" placeholder="Destination (e.g. Dubai)">
         </div>
         <div class="input-group">
-            <label>DATO</label>
+            <label>DATE</label>
             <input type="date">
         </div>
         <div class="input-group" style="flex: 0.7;">
-            <button class="btn-search">Søk Fly</button>
+            <button class="btn-search">Search Flights</button>
         </div>
     </div>
 
     <section class="services">
-        <h3>Hvorfor velge SAA Agency?</h3>
+        <h3>Why Choose SAA Agency?</h3>
         <div class="service-cards">
             <div class="card">
-                <h4>Personlig Service</h4>
-                <p>Abdurahman og teamet sørger for at du får akkurat den oppfølgingen du trenger for en trygg reise.</p>
+                <h4>Personalized Service</h4>
+                <p>Abdurahman and the team ensure you get exactly the support you need for a safe journey.</p>
             </div>
             <div class="card">
-                <h4>Eksperter</h4>
-                <p>Vi kjenner markedet og finner de raskeste rutene og de beste prisene for våre kunder.</p>
+                <h4>Expert Advice</h4>
+                <p>We know the market and find the fastest routes and best prices for our clients.</p>
             </div>
             <div class="card">
-                <h4>Kvalitet</h4>
-                <p>Din pålitelige partner for alt innen reise og utenlandsbemanning fra Etiopia.</p>
+                <h4>Quality Partner</h4>
+                <p>Your reliable partner for all travel and foreign employment needs from Ethiopia.</p>
             </div>
         </div>
     </section>
 
     <footer>
         <h2>SAA Manpower Foreign Employment Agency</h2>
-        <p>&copy; 2026 Alle rettigheter reservert.</p>
-        <p style="margin-top: 15px;">Drevet av <span class="footer-name">Abdurahman Ashebir Yimam</span> | Woldia, Etiopia</p>
+        <p>&copy; 2026 All rights reserved.</p>
+        <p style="margin-top: 15px;">Powered by <span class="footer-name">Abdurahman Ashebir Yimam</span> | Woldia, Ethiopia</p>
     </footer>
 
 </body>
