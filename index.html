@@ -3,357 +3,318 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAA - Travel & Foreign Employment Agency</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        maroon: '#5e111d',
-                        gold: '#ce9f43',
-                        darkBg: '#111111'
-                    }
-                }
-            }
-        }
-    </script>
+    <title>SAA Travel & Manpower Agency</title>
     <style>
-        .hero-bg {
-            background-image: linear-gradient(rgba(94, 17, 29, 0.75), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
+        /* Ren og skreddersydd CSS */
+        :root {
+            --primary: #5e111d; /* Din SAA Maroon-farge */
+            --secondary: #ce9f43; /* Din SAA Gull-farge */
+            --bg-color: #f4f6f9;
+            --text-color: #333;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        /* Navigasjon og Logo */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Henter logo.jpg fra mappen din */
+        .logo-container img {
+            height: 70px;
+            border-radius: 8px;
+            object-fit: contain;
+        }
+
+        .brand-text h1 {
+            color: var(--primary);
+            font-size: 26px;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+        }
+
+        .brand-text span {
+            color: var(--secondary);
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            margin-left: 30px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* Hovedseksjon (Hero) */
+        .hero {
+            background: linear-gradient(rgba(94, 17, 29, 0.85), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074&auto=format&fit=crop') no-repeat center center/cover;
+            height: 65vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 20px;
+        }
+
+        .founder-badge {
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 8px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #f1f1f1;
+            max-width: 600px;
+        }
+
+        /* Søkeboks */
+        .search-box {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            max-width: 1000px;
+            width: 90%;
+            margin: -70px auto 50px auto;
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .input-group {
+            flex: 1;
+            min-width: 220px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group label {
+            font-size: 13px;
+            color: var(--primary);
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .input-group input, .input-group select {
+            padding: 15px;
+            border: 2px solid #e1e1e1;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            outline: none;
+            transition: border-color 0.3s;
+            color: #333;
+        }
+
+        .input-group input:focus {
+            border-color: var(--secondary);
+        }
+
+        .btn-search {
+            background-color: var(--primary);
+            color: var(--secondary);
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            height: 100%;
+            margin-top: 25px;
+            width: 100%;
+        }
+
+        .btn-search:hover {
+            background-color: #4a0d17;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(94, 17, 29, 0.4);
+        }
+
+        /* Tjenester */
+        .services {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .services h3 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        .service-cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            width: 320px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            border-top: 6px solid var(--secondary);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h4 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+            border-top: 5px solid var(--secondary);
+        }
+
+        footer h2 {
+            color: var(--secondary);
+            margin-bottom: 10px;
+        }
+
+        .footer-name {
+            color: var(--secondary);
+            font-weight: bold;
+            font-size: 1.1rem;
         }
     </style>
 </head>
-<body class="bg-gray-50 font-sans text-gray-800">
+<body>
 
-    <!-- Top Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <div class="flex items-center gap-2">
-                    <i class="fa-solid fa-plane-departure text-4xl text-maroon"></i>
-                    <div class="flex flex-col">
-                        <span class="font-extrabold text-2xl text-maroon leading-none">SAA</span>
-                        <span class="text-[10px] font-bold text-gold tracking-widest">AGENCY</span>
-                    </div>
-                </div>
-                <div class="hidden md:flex items-center space-x-6">
-                    <a href="#" class="text-gray-700 hover:text-maroon font-semibold">Book <i class="fa-solid fa-chevron-down text-xs"></i></a>
-                    <a href="#" class="text-gray-700 hover:text-maroon font-semibold">Tools <i class="fa-solid fa-chevron-down text-xs"></i></a>
-                    <a href="#" class="text-gray-700 hover:text-maroon font-semibold">Blog</a>
-                    <a href="#" class="text-gray-700 hover:text-maroon font-semibold">Contact <i class="fa-solid fa-chevron-down text-xs"></i></a>
-                    <div class="border-l border-gray-300 h-6 mx-2"></div>
-                    <button class="text-maroon font-semibold flex items-center gap-1"><i class="fa-solid fa-globe"></i> EN · Br</button>
-                    <button class="text-gray-700 font-semibold hover:text-maroon">Login</button>
-                </div>
+    <header>
+        <div class="logo-container">
+            <!-- Sørg for at filen din heter nøyaktig logo.jpg i samme mappe -->
+            <img src="logo.jpg" alt="SAA Logo" onerror="this.onerror=null; this.src='https://via.placeholder.com/70x70/5e111d/ce9f43?text=SAA';">
+            <div class="brand-text">
+                <h1>SAA</h1>
+                <span>Manpower & Travel</span>
             </div>
         </div>
-    </nav>
-
-    <!-- Hero & Search Box -->
-    <div class="hero-bg relative pt-16 pb-48 flex flex-col items-center px-4">
-        <div class="text-center mb-8">
-            <span class="bg-maroon text-gold border border-gold font-bold px-4 py-1 rounded-full text-xs uppercase tracking-wider shadow-lg">✈ Your Wings to the World</span>
-            <h1 class="mt-6 text-4xl md:text-6xl font-extrabold text-white mb-4 drop-shadow-lg">Book Affordable Flights<br>to Ethiopia & Beyond</h1>
-            <p class="text-gray-200 text-lg md:text-xl font-medium drop-shadow-md">Compare 45+ airlines. IATA accredited. Best prices worldwide.</p>
-            <div class="mt-6 flex justify-center gap-4 text-sm font-semibold text-white">
-                <span class="bg-black bg-opacity-40 px-3 py-1 rounded-full border border-gray-400">26,096+ travelers trust us</span>
-                <span class="bg-black bg-opacity-40 px-3 py-1 rounded-full border border-gray-400">46,897+ tickets issued</span>
-            </div>
+        <div class="nav-links">
+            <a href="#">Hjem</a>
+            <a href="#">Tjenester</a>
+            <a href="#">Kontakt oss</a>
         </div>
+    </header>
 
-        <!-- Search Form -->
-        <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl p-6 absolute -bottom-28 z-20">
-            <div class="flex space-x-6 mb-6 border-b border-gray-100 pb-3">
-                <button class="text-maroon font-bold border-b-2 border-maroon pb-2 flex items-center gap-2 px-2">
-                    <i class="fa-solid fa-plane"></i> Flights
-                </button>
-                <button class="text-gray-500 font-semibold hover:text-maroon pb-2 flex items-center gap-2 px-2">
-                    <i class="fa-solid fa-bed"></i> Hotels
-                </button>
-                <button class="text-gray-500 font-semibold hover:text-maroon pb-2 flex items-center gap-2 px-2">
-                    <i class="fa-solid fa-car"></i> Cars
-                </button>
-            </div>
-            
-            <div class="flex flex-wrap gap-4 mb-6 items-center">
-                <button class="bg-gray-100 text-gray-800 font-semibold px-4 py-2 rounded-lg border border-gray-200 hover:bg-gray-200">One Way</button>
-                <button class="text-gray-600 font-semibold px-4 py-2 hover:text-maroon">Round Trip</button>
-                <button class="text-gray-600 font-semibold px-4 py-2 hover:text-maroon">Multi-City</button>
-                
-                <div class="ml-auto flex gap-3">
-                    <button class="bg-gray-50 text-gray-700 font-semibold px-4 py-2 rounded-lg border border-gray-200 flex items-center gap-2"><i class="fa-regular fa-user"></i> 1 Adult <i class="fa-solid fa-chevron-down text-xs"></i></button>
-                    <button class="bg-gray-50 text-gray-700 font-semibold px-4 py-2 rounded-lg border border-gray-200 flex items-center gap-2">Economy <i class="fa-solid fa-chevron-down text-xs"></i></button>
-                </div>
-            </div>
+    <section class="hero">
+        <div class="founder-badge">Grunnlagt av Abdurahman Ashebir Yimam</div>
+        <h2>Reis med Trygghet</h2>
+        <p>Etiopias mest pålitelige byrå for flyreiser og internasjonal bemanning.</p>
+    </section>
 
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative">
-                <div class="border border-gray-300 rounded-xl p-3 bg-gray-50 hover:border-maroon transition">
-                    <p class="text-xs text-gray-500 font-bold mb-1">FROM</p>
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-plane-departure text-gray-400"></i>
-                        <input type="text" placeholder="ADD - Addis Ababa" class="w-full font-bold text-gray-800 bg-transparent focus:outline-none">
-                    </div>
-                </div>
-                <div class="hidden md:flex justify-center items-center w-10 h-10 rounded-full border border-gray-300 bg-white absolute left-1/4 top-1/2 transform -translate-y-1/2 -ml-5 z-10 cursor-pointer hover:bg-gray-100 shadow-sm text-gray-500">
-                    <i class="fa-solid fa-right-left"></i>
-                </div>
-                <div class="border border-gray-300 rounded-xl p-3 bg-gray-50 hover:border-maroon transition">
-                    <p class="text-xs text-gray-500 font-bold mb-1">TO</p>
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-location-dot text-gray-400"></i>
-                        <input type="text" placeholder="DXB - Dubai" class="w-full font-bold text-gray-800 bg-transparent focus:outline-none">
-                    </div>
-                </div>
-                <div class="border border-gray-300 rounded-xl p-3 bg-gray-50 hover:border-maroon transition">
-                    <p class="text-xs text-gray-500 font-bold mb-1">DEPARTURE</p>
-                    <div class="flex items-center gap-2">
-                        <i class="fa-regular fa-calendar text-gray-400"></i>
-                        <input type="text" placeholder="Tomorrow" class="w-full font-bold text-gray-800 bg-transparent focus:outline-none">
-                    </div>
-                </div>
-                <div>
-                    <button class="w-full h-full bg-maroon text-white font-bold text-lg rounded-xl hover:bg-red-900 transition duration-300 shadow-md flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-magnifying-glass"></i> Search
-                    </button>
-                </div>
-            </div>
+    <div class="search-box">
+        <div class="input-group">
+            <label>REIS FRA</label>
+            <input type="text" placeholder="Addis Ababa (ADD)">
+        </div>
+        <div class="input-group">
+            <label>REIS TIL</label>
+            <input type="text" placeholder="Destinasjon (f.eks. Dubai)">
+        </div>
+        <div class="input-group">
+            <label>DATO</label>
+            <input type="date">
+        </div>
+        <div class="input-group" style="flex: 0.7;">
+            <button class="btn-search">Søk Fly</button>
         </div>
     </div>
 
-    <div class="h-40 bg-gray-50"></div>
+    <section class="services">
+        <h3>Hvorfor velge SAA Agency?</h3>
+        <div class="service-cards">
+            <div class="card">
+                <h4>Personlig Service</h4>
+                <p>Abdurahman og teamet sørger for at du får akkurat den oppfølgingen du trenger for en trygg reise.</p>
+            </div>
+            <div class="card">
+                <h4>Eksperter</h4>
+                <p>Vi kjenner markedet og finner de raskeste rutene og de beste prisene for våre kunder.</p>
+            </div>
+            <div class="card">
+                <h4>Kvalitet</h4>
+                <p>Din pålitelige partner for alt innen reise og utenlandsbemanning fra Etiopia.</p>
+            </div>
+        </div>
+    </section>
 
-    <!-- Trust Badges -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-            <div class="flex gap-4 items-start">
-                <div class="bg-blue-50 p-3 rounded-full text-blue-600 text-xl"><i class="fa-solid fa-shield-check"></i></div>
-                <div>
-                    <h4 class="font-bold text-gray-800">IATA Accredited Agency</h4>
-                    <p class="text-sm text-gray-500 mt-1">Licensed to issue tickets directly on 45+ airlines</p>
-                </div>
-            </div>
-            <div class="flex gap-4 items-start">
-                <div class="bg-red-50 p-3 rounded-full text-red-500 text-xl"><i class="fa-regular fa-credit-card"></i></div>
-                <div>
-                    <h4 class="font-bold text-gray-800">All Payment Methods</h4>
-                    <p class="text-sm text-gray-500 mt-1">Bank transfer, mobile money, or pay at our office</p>
-                </div>
-            </div>
-            <div class="flex gap-4 items-start">
-                <div class="bg-green-50 p-3 rounded-full text-green-500 text-xl"><i class="fa-regular fa-comments"></i></div>
-                <div>
-                    <h4 class="font-bold text-gray-800">24/7 Support</h4>
-                    <p class="text-sm text-gray-500 mt-1">Call, Telegram, WhatsApp, WeChat, Email & Chat</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Popular Flights Section -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
-        <div class="text-center mb-10">
-            <h2 class="text-3xl font-extrabold text-gray-900 mb-2">Popular Flights from Ethiopia</h2>
-            <p class="text-gray-500">Most booked destinations by our travelers</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <!-- Card 1 -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100 cursor-pointer group">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Dubai">
-                </div>
-                <div class="p-5">
-                    <h3 class="font-bold text-xl text-gray-900">Dubai</h3>
-                    <p class="text-sm text-gray-500 mb-4">ADD → DXB</p>
-                    <p class="text-xs text-gray-400">from <span class="font-extrabold text-lg text-gray-900 ml-1">ETB 47,172</span></p>
-                </div>
-            </div>
-            <!-- Card 2 -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100 cursor-pointer group">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1513635269975-59693e0cd156?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="London">
-                </div>
-                <div class="p-5">
-                    <h3 class="font-bold text-xl text-gray-900">London</h3>
-                    <p class="text-sm text-gray-500 mb-4">ADD → LHR</p>
-                    <p class="text-xs text-gray-400">from <span class="font-extrabold text-lg text-gray-900 ml-1">ETB 71,060</span></p>
-                </div>
-            </div>
-            <!-- Card 3 -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100 cursor-pointer group">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e57fe90?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Washington DC">
-                </div>
-                <div class="p-5">
-                    <h3 class="font-bold text-xl text-gray-900">Washington DC</h3>
-                    <p class="text-sm text-gray-500 mb-4">ADD → IAD</p>
-                    <p class="text-xs text-gray-400">from <span class="font-extrabold text-lg text-gray-900 ml-1">ETB 114,420</span></p>
-                </div>
-            </div>
-            <!-- Card 4 -->
-            <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100 cursor-pointer group">
-                <div class="h-48 overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1508009603885-245ab6561940?q=80&w=2071&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-110 transition duration-500" alt="Bangkok">
-                </div>
-                <div class="p-5">
-                    <h3 class="font-bold text-xl text-gray-900">Bangkok</h3>
-                    <p class="text-sm text-gray-500 mb-4">ADD → BKK</p>
-                    <p class="text-xs text-gray-400">from <span class="font-extrabold text-lg text-gray-900 ml-1">ETB 107,154</span></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Dark Map Section -->
-    <div class="bg-darkBg py-20 relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-3">Where Will <span class="text-maroon">You</span> Fly?</h2>
-            <p class="text-gray-400 mb-8">Our travellers flew to 248 destinations from Addis Ababa this past year. Tap one to search flights.</p>
-            <div class="flex flex-wrap justify-center gap-3 mb-10">
-                <button class="bg-maroon text-white font-semibold px-6 py-2 rounded-full">World</button>
-                <button class="bg-gray-800 text-gray-300 hover:text-white font-semibold px-6 py-2 rounded-full border border-gray-700">Africa</button>
-                <button class="bg-gray-800 text-gray-300 hover:text-white font-semibold px-6 py-2 rounded-full border border-gray-700">Middle East</button>
-                <button class="bg-gray-800 text-gray-300 hover:text-white font-semibold px-6 py-2 rounded-full border border-gray-700">Europe</button>
-                <button class="bg-gray-800 text-gray-300 hover:text-white font-semibold px-6 py-2 rounded-full border border-gray-700">Asia</button>
-            </div>
-            <!-- Mock Map Graphic -->
-            <div class="w-full h-96 bg-gray-900 rounded-3xl border border-gray-800 flex items-center justify-center opacity-80" style="background-image: radial-gradient(circle, #5e111d 1%, transparent 2%); background-size: 20px 20px;">
-                <p class="text-gray-600 font-bold tracking-widest">[ Interactive Map Area ]</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- How It Works Section -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-extrabold text-gray-900 mb-2">How It Works</h2>
-            <p class="text-gray-500">Book your flight in 4 simple steps</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-            <div class="hidden md:block absolute top-1/4 left-1/4 right-1/4 border-t-2 border-dashed border-gray-200 z-0"></div>
-            <!-- Step 1 -->
-            <div class="bg-white p-8 rounded-3xl shadow-sm text-center border border-gray-100 relative z-10">
-                <div class="w-20 h-20 bg-white border border-gray-200 text-maroon rounded-full flex items-center justify-center mx-auto mb-6 text-3xl shadow-sm relative">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <span class="absolute -top-1 -right-1 bg-maroon text-white w-7 h-7 rounded-full text-sm font-bold flex items-center justify-center shadow-md">1</span>
-                </div>
-                <h3 class="font-bold text-xl text-gray-900 mb-3">Search</h3>
-                <p class="text-gray-500 text-sm">Find the best flights and prices across multiple airlines</p>
-            </div>
-            <!-- Step 2 -->
-            <div class="bg-white p-8 rounded-3xl shadow-sm text-center border border-gray-100 relative z-10">
-                <div class="w-20 h-20 bg-white border border-gray-200 text-maroon rounded-full flex items-center justify-center mx-auto mb-6 text-3xl shadow-sm relative">
-                    <i class="fa-regular fa-circle-check"></i>
-                    <span class="absolute -top-1 -right-1 bg-maroon text-white w-7 h-7 rounded-full text-sm font-bold flex items-center justify-center shadow-md">2</span>
-                </div>
-                <h3 class="font-bold text-xl text-gray-900 mb-3">Select</h3>
-                <p class="text-gray-500 text-sm">Pick the flight that works best for you</p>
-            </div>
-            <!-- Step 3 -->
-            <div class="bg-white p-8 rounded-3xl shadow-sm text-center border border-gray-100 relative z-10">
-                <div class="w-20 h-20 bg-white border border-gray-200 text-maroon rounded-full flex items-center justify-center mx-auto mb-6 text-3xl shadow-sm relative">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <span class="absolute -top-1 -right-1 bg-maroon text-white w-7 h-7 rounded-full text-sm font-bold flex items-center justify-center shadow-md">3</span>
-                </div>
-                <h3 class="font-bold text-xl text-gray-900 mb-3">We Confirm</h3>
-                <p class="text-gray-500 text-sm">Our agent verifies the fare and holds your seat</p>
-            </div>
-            <!-- Step 4 -->
-            <div class="bg-white p-8 rounded-3xl shadow-sm text-center border border-gray-100 relative z-10">
-                <div class="w-20 h-20 bg-white border border-gray-200 text-maroon rounded-full flex items-center justify-center mx-auto mb-6 text-3xl shadow-sm relative">
-                    <i class="fa-solid fa-plane-up"></i>
-                    <span class="absolute -top-1 -right-1 bg-maroon text-white w-7 h-7 rounded-full text-sm font-bold flex items-center justify-center shadow-md">4</span>
-                </div>
-                <h3 class="font-bold text-xl text-gray-900 mb-3">Fly!</h3>
-                <p class="text-gray-500 text-sm">Pay your way and receive your e-ticket instantly</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Trusted Partners -->
-    <div class="bg-white py-16 border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <h4 class="text-sm font-bold text-gray-400 tracking-widest uppercase mb-8">Trusted Airline Partners</h4>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60">
-                <span class="text-2xl font-bold text-gray-800"><i class="fa-solid fa-plane"></i> Ethiopian</span>
-                <span class="text-2xl font-bold text-red-600">Emirates</span>
-                <span class="text-2xl font-bold text-blue-800">flydubai</span>
-                <span class="text-2xl font-bold text-red-700">QATAR</span>
-                <span class="text-2xl font-bold text-green-700">Saudia</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Reviews Section -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-extrabold text-gray-900 mb-2">What Our Travelers Say</h2>
-            <p class="text-gray-500">4.7★ on Google · Verified reviews from our Google Business Profile</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-xl">O</div>
-                    <div>
-                        <h4 class="font-bold text-gray-900">Odysseus Da Don</h4>
-                        <div class="text-gold text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    </div>
-                </div>
-                <p class="text-gray-600 text-sm italic">"Great agency, got me all I needed for my travels with great service and no delays..."</p>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-xl">B</div>
-                    <div>
-                        <h4 class="font-bold text-gray-900">Betelihem G.</h4>
-                        <div class="text-gold text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    </div>
-                </div>
-                <p class="text-gray-600 text-sm italic">"I had a really nice experience with SAA Travel Agency. The team was friendly, easy to talk to..."</p>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center font-bold text-xl">N</div>
-                    <div>
-                        <h4 class="font-bold text-gray-900">Natnael Alemu</h4>
-                        <div class="text-gold text-sm"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                    </div>
-                </div>
-                <p class="text-gray-600 text-sm italic">"The service was exceptional! The staff was friendly and professional..."</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- CTA & Footer -->
-    <div class="bg-darkBg text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center">
-            <div class="mb-6 md:mb-0">
-                <h2 class="text-3xl font-extrabold mb-2">Travel Agency? Partner With Us</h2>
-                <p class="text-gray-400">Join 200+ Non-IATA agencies issuing tickets through our IATA accreditation.</p>
-            </div>
-            <button class="border border-white hover:bg-white hover:text-darkBg font-bold px-8 py-3 rounded-xl transition duration-300 flex items-center gap-2">
-                <i class="fa-solid fa-users"></i> Become a Partner
-            </button>
-        </div>
-    </div>
-    
-    <footer class="bg-maroon text-white py-10 text-center border-t border-red-900">
-        <div class="flex justify-center gap-2 mb-4">
-            <i class="fa-solid fa-plane-departure text-3xl text-gold"></i>
-            <span class="font-extrabold text-2xl tracking-wider text-white">SAA</span>
-        </div>
-        <p class="font-semibold text-gray-300 text-sm mb-4">&copy; 2026 SAA Manpower Foreign Employment Agency. All rights reserved.</p>
-        <p class="text-xs text-gold">Built for Woldia, Ethiopia</p>
+    <footer>
+        <h2>SAA Manpower Foreign Employment Agency</h2>
+        <p>&copy; 2026 Alle rettigheter reservert.</p>
+        <p style="margin-top: 15px;">Drevet av <span class="footer-name">Abdurahman Ashebir Yimam</span> | Woldia, Etiopia</p>
     </footer>
-
-    <!-- Chat Widget Button -->
-    <div class="fixed bottom-6 right-6 bg-red-600 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-2xl cursor-pointer hover:bg-red-700 transition z-50">
-        <i class="fa-solid fa-comment-dots"></i>
-    </div>
 
 </body>
 </html>
