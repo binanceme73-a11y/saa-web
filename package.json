@@ -1,0 +1,21 @@
+{
+  "name": "saa-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://binanceme73-a11y@github.com/binanceme73-a11y/saa-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/binanceme73-a11y/saa-web/issues"
+  },
+  "homepage": "https://github.com/binanceme73-a11y/saa-web#readme"
+}
