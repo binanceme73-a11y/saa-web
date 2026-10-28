@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAA Travel & Foreign Employment Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        maroon: '#5e111d',
+                        gold: '#ce9f43',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            /* Airplane background image with Maroon overlay */
+            background-image: linear-gradient(rgba(94, 17, 29, 0.8), rgba(94, 17, 29, 0.8)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=2074&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .tab-active {
+            background-color: #fef2f2;
+            color: #5e111d;
+            border-bottom: 2px solid #5e111d;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center gap-2">
+                        <i class="fa-solid fa-plane-departure text-3xl text-maroon"></i>
+                        <span class="font-extrabold text-3xl text-maroon tracking-wider">SAA</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-gray-700 hover:text-gold font-semibold">Book</a>
+                    <a href="#" class="text-gray-700 hover:text-gold font-semibold">Tools</a>
+                    <a href="#" class="text-gray-700 hover:text-gold font-semibold">Contact</a>
+                    <button class="bg-maroon text-white px-6 py-2 rounded-full font-bold hover:bg-red-900 transition duration-300">Login</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section & Search -->
+    <div class="hero-bg relative pt-16 pb-32 flex flex-col items-center">
+        <div class="text-center mb-10">
+            <span class="bg-gold text-maroon font-bold px-4 py-1 rounded-full text-sm uppercase tracking-wide">✈ Your Wings to the World</span>
+            <h1 class="mt-6 text-4xl md:text-6xl font-extrabold text-white mb-4">Book Affordable Flights<br>to Ethiopia & Beyond</h1>
+            <p class="text-gray-200 text-lg">Compare 45+ airlines. IATA accredited. Best prices worldwide.</p>
+        </div>
+
+        <!-- Search Box -->
+        <div class="bg-white w-11/12 md:w-3/4 lg:w-2/3 rounded-2xl shadow-2xl p-6 absolute -bottom-24 z-10">
+            
+            <!-- Tabs -->
+            <div class="flex space-x-4 mb-6 border-b border-gray-200 pb-2">
+                <button class="tab-active px-4 py-2 font-bold rounded-t-lg flex items-center gap-2">
+                    <i class="fa-solid fa-plane"></i> Flights
+                </button>
+                <button class="px-4 py-2 font-semibold text-gray-500 hover:text-maroon flex items-center gap-2">
+                    <i class="fa-solid fa-bed"></i> Hotels
+                </button>
+                <button class="px-4 py-2 font-semibold text-gray-500 hover:text-maroon flex items-center gap-2">
+                    <i class="fa-solid fa-car"></i> Cars
+                </button>
+            </div>
+
+            <!-- Options -->
+            <div class="flex flex-wrap gap-4 mb-6">
+                <label class="flex items-center space-x-2 cursor-pointer">
+                    <input type="radio" name="trip" class="form-radio text-maroon focus:ring-maroon" checked>
+                    <span class="font-semibold text-gray-700">One Way</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                    <input type="radio" name="trip" class="form-radio text-maroon focus:ring-maroon">
+                    <span class="font-semibold text-gray-700">Round Trip</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer ml-auto">
+                    <span class="font-semibold text-gray-700 bg-gray-100 px-3 py-1 rounded border border-gray-200"><i class="fa-solid fa-user"></i> 1 Adult</span>
+                </label>
+                <label class="flex items-center space-x-2 cursor-pointer">
+                    <span class="font-semibold text-gray-700 bg-gray-100 px-3 py-1 rounded border border-gray-200">Economy</span>
+                </label>
+            </div>
+
+            <!-- Inputs -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="md:col-span-1 border border-gray-300 rounded-lg p-3">
+                    <p class="text-xs text-gray-500 font-bold mb-1">FROM</p>
+                    <input type="text" placeholder="Addis Ababa (ADD)" class="w-full font-semibold focus:outline-none text-gray-800">
+                </div>
+                <div class="hidden md:flex justify-center items-center w-8 h-8 rounded-full border border-gray-300 bg-white absolute left-1/4 top-1/2 transform -translate-y-1/2 -ml-4 z-10 cursor-pointer hover:bg-gray-100">
+                    <i class="fa-solid fa-right-left text-gray-500 text-xs"></i>
+                </div>
+                <div class="md:col-span-1 border border-gray-300 rounded-lg p-3">
+                    <p class="text-xs text-gray-500 font-bold mb-1">TO</p>
+                    <input type="text" placeholder="Dubai (DXB)" class="w-full font-semibold focus:outline-none text-gray-800">
+                </div>
+                <div class="md:col-span-1 border border-gray-300 rounded-lg p-3">
+                    <p class="text-xs text-gray-500 font-bold mb-1">DEPARTURE</p>
+                    <input type="date" class="w-full font-semibold focus:outline-none text-gray-800">
+                </div>
+                <div class="md:col-span-1 flex items-end">
+                    <button class="w-full bg-maroon text-gold font-bold text-lg py-4 rounded-lg hover:bg-red-900 transition duration-300 shadow-lg">
+                        Search Flights
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Space for overlapping search box -->
+    <div class="h-32 bg-gray-50"></div>
+
+    <!-- How It Works Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-extrabold text-maroon mb-2">How It Works</h2>
+            <p class="text-gray-500">Book your flight in 4 simple steps</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+            <!-- Step 1 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm text-center border-t-4 border-gold hover:shadow-md transition">
+                <div class="w-16 h-16 bg-red-50 text-maroon rounded-full flex items-center justify-center mx-auto mb-4 text-2xl relative">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span class="absolute -top-2 -right-2 bg-maroon text-white w-6 h-6 rounded-full text-sm font-bold flex items-center justify-center">1</span>
+                </div>
+                <h3 class="font-bold text-xl text-gray-800 mb-2">Search</h3>
+                <p class="text-gray-500 text-sm">Find the best flights and prices across multiple airlines</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm text-center border-t-4 border-gold hover:shadow-md transition">
+                <div class="w-16 h-16 bg-red-50 text-maroon rounded-full flex items-center justify-center mx-auto mb-4 text-2xl relative">
+                    <i class="fa-regular fa-circle-check"></i>
+                    <span class="absolute -top-2 -right-2 bg-maroon text-white w-6 h-6 rounded-full text-sm font-bold flex items-center justify-center">2</span>
+                </div>
+                <h3 class="font-bold text-xl text-gray-800 mb-2">Select</h3>
+                <p class="text-gray-500 text-sm">Pick the flight that works best for you and your budget</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm text-center border-t-4 border-gold hover:shadow-md transition">
+                <div class="w-16 h-16 bg-red-50 text-maroon rounded-full flex items-center justify-center mx-auto mb-4 text-2xl relative">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span class="absolute -top-2 -right-2 bg-maroon text-white w-6 h-6 rounded-full text-sm font-bold flex items-center justify-center">3</span>
+                </div>
+                <h3 class="font-bold text-xl text-gray-800 mb-2">We Confirm</h3>
+                <p class="text-gray-500 text-sm">Our agent verifies the fare and securely holds your seat</p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm text-center border-t-4 border-gold hover:shadow-md transition">
+                <div class="w-16 h-16 bg-red-50 text-maroon rounded-full flex items-center justify-center mx-auto mb-4 text-2xl relative">
+                    <i class="fa-solid fa-plane-up"></i>
+                    <span class="absolute -top-2 -right-2 bg-maroon text-white w-6 h-6 rounded-full text-sm font-bold flex items-center justify-center">4</span>
+                </div>
+                <h3 class="font-bold text-xl text-gray-800 mb-2">Fly!</h3>
+                <p class="text-gray-500 text-sm">Pay your way and receive your e-ticket instantly to your email</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-maroon text-white py-8 mt-10 text-center border-t-4 border-gold">
+        <p class="font-semibold text-gold">&copy; 2026 SAA Manpower Foreign Employment Agency. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
